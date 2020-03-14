@@ -4,9 +4,9 @@
  */
 error_reporting(0);
 require_once dirname(dirname(__FILE__)) . '/lib/class.geetestlib.php';
-require_once "../../../config.php";
+require_once(dirname(dirname(dirname(dirname(__FILE__))))."/config.php");
 session_start();
-$GtSdk = new GeetestLib($config['geetest']['CAPTCHA_ID'], $config['geetest']['PRIVATE_KEY']);
+$GtSdk = new GeetestLib(__GEETEST_CAPTCHA_ID__, __GEETEST_PRIVATE_KEY__);
 
 $data = array(
         "user_id" => $_SESSION['user_id'], # 网站用户id

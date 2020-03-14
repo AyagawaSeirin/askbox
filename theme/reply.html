@@ -1,0 +1,15 @@
+<!-- By ohmyga -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<style>body{margin:0}.moe-card{width:800px;margin:auto;padding:10px;position:relative;border-radius:2px;box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}@media(max-width:800px){.moe-card{width:92%;margin-top:30px}}.moe-title{margin-top:12px}.moe-title:before{content:'';left:0;height:28px;margin-right:20px;position:absolute;transition:all .29s;border-left:4px solid #e91e63}.moe-title:after{left:0;content:'';width:100%;position:absolute;margin-top:42px;border-bottom:1px solid #eee}.moe-card a{color:#ff4081;transition:all .29s ease;text-decoration:none!important}.moe-card a:hover{transition:all .29s ease;text-shadow:0 1px 1px #ff80ab}.moe-body{font-size:16px;margin-top:36px}.moe-body .moe-d-1{padding:15px;margin-top:6px;border-radius:5px;margin-bottom:18px;background-color:#eee}.moe-body .moe-d-2{padding:15px;margin-top:6px;border-radius:5px;margin-bottom:18px;background-color:#eee}.moe-body .moe-d-3{font-size:14px;margin-top:6px;font-weight:400}</style>
+<div class="moe-card">
+ <h3 class="moe-title">您在 <a href="{blogUrl}">{blogName}</a> 上的留言有新回复啦！</h3>
+ <div class="moe-body">
+    {author}，您曾在文章《{title}》上发表过评论：
+  <div class="moe-d-1">{text}</div>
+  {replyAuthor} 给您的回复如下：
+  <div class="moe-d-2">{replyText}</div>
+  <div class="moe-d-3">详细回复内容请 <a href="{commentUrl}">点此</a> 查看
+   <br>欢迎再次光临 <a href="{blogUrl}">{blogName}</a> 哟(￣▽￣)"。
+  </div>
+ </div>
+</div>

@@ -13,7 +13,6 @@ $choice = 1;
                 href="https://twitter.com/AyagawaSeirin" target="_blank">Twitter</a> ）</p>
     <p>除邮箱外我们不会记录你的任何信息，邮箱也是选择性填写，填写后会将回答结果以邮件形式发送给你~</p>
 
-    <!--        <form action="" method="post" id="formAsk">-->
     <div class="mdui-textfield" style="padding-top:0;">
         <label class="mdui-textfield-label">提问内容</label>
         <textarea class="mdui-textfield-input input-text" id="text"></textarea>
@@ -24,7 +23,7 @@ $choice = 1;
     </div>
     <input type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-center"
            style="margin-top: 5px" id="submitAsk" VALUE="提交">
-    <!--        </form>-->
+
     <script src="/lib/geetest/static/gt.js"></script>
     <script type="text/javascript" language="javascript">
         var handler = function (captchaObj) {
@@ -62,16 +61,14 @@ $choice = 1;
 
                 });
             });
-            // console.log($('#submit'));
             $('#submitAsk').click(function () {
-                // 调用之前先通过前端表单校验
+
                 if ($('#email').val() == '') {
-                    mdui.confirm('你确定不填写邮箱么qwq?这样将无法及时收到回复呢~', '再等等!',
+                    mdui.confirm('你确定不填写邮箱么qwq?<br>这样将无法及时收到回复呢~', '再等等!',
                         function () {
                             captchaObj.verify();
                         },
                         function () {
-
                         },
                         {
                             confirmText: "确定",
