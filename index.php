@@ -1,16 +1,16 @@
 <html lang="zh-CN">
 <?php
+require_once dirname(__FILE__).'/config.php';
 $title = "皮皮凛的匿名提问箱";
 $choice = 1;
 ?>
 <head>
-    <?php include("./layout/head.php"); ?>
+    <?php include(dirname(__FILE__)."/layout/head.php"); ?>
 </head>
 <body class="mdui-theme-primary-pink mdui-theme-accent-pink">
-<?php include("./layout/nav.php"); ?>
+<?php include(dirname(__FILE__)."/layout/nav.php"); ?>
 <div class="main mdui-typo">
-    <p>这里是皮皮凛的提问箱~<br>你可以在这里匿名地向我提出问题，如果我愿意回答，我就会回答啦。不一定是问题，匿名的想说的话也是可以发出的哦。在我回答后，该问题与答案也会一同发布于提问列表和其他平台（ 比如我的<a
-                href="https://twitter.com/AyagawaSeirin" target="_blank">Twitter</a> ）</p>
+    <p>这里是皮皮凛的提问箱~<br>你可以在这里匿名地向我提出问题，如果我愿意回答，我就会回答啦。不一定是问题，匿名的想说的话也是可以发出的哦。在我回答后，该问题与答案也会一同发布于提问列表和其他平台（ 比如我的<a href="https://twitter.com/AyagawaSeirin" target="_blank">Twitter</a> ）</p>
     <p>除邮箱外我们不会记录你的任何信息，邮箱也是选择性填写，填写后会将回答结果以邮件形式发送给你~</p>
 
     <div class="mdui-textfield" style="padding-top:0;">
@@ -22,7 +22,7 @@ $choice = 1;
         <div class="mdui-textfield-helper">如果你填写了邮箱，回答结果会以邮件形式发送给你~</div>
     </div>
     <input type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-center"
-           style="margin-top: 5px" id="submitAsk" VALUE="提交">
+           style="margin-top: 5px" id="submitAsk" value="提交">
 
     <script src="/lib/geetest/static/gt.js"></script>
     <script type="text/javascript" language="javascript">
@@ -32,15 +32,15 @@ $choice = 1;
             }).onSuccess(function () {
                 var result = captchaObj.getValidate();
                 if (!result) {
-                    return alert('请完成验证');
+                    mdui.alert('请完成验证', '出错啦!');
                 }
                 $.ajax({
                     url: "/php/submit.php",
                     type: 'POST',
                     dataType: 'json',
                     data: {
-                        username: $('#text').val(),
-                        password: $('#email').val(),
+                        text: $('#text').val(),
+                        email: $('#email').val(),
                         geetest_challenge: result.geetest_challenge,
                         geetest_validate: result.geetest_validate,
                         geetest_seccode: result.geetest_seccode
@@ -55,7 +55,7 @@ $choice = 1;
                         if (data.status != 0) {
                             mdui.alert(data.msg, '出错啦!');
                         } else {
-                            mdui.alert('匿名问题提交成功啦!~', '成功啦~');
+                            mdui.alert('匿名提问提交成功啦!~<br>提问id:'+data.id+'<br>你可以根据这个id查询提问状态~', '成功啦~');
                         }
                     },
 

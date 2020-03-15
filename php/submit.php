@@ -12,8 +12,8 @@ if(!$check::check()){
 $content = $_POST['text'];
 $email = $_POST['email'];
 
-//$content = "测试提问内容数据";
-//$email = "AyagawaSeirin@qq.com";
+$content = "测试提问内容数据";
+$email = "AyagawaSeirin@qq.com";
 
 if($content == null){
     echo json_encode(array("status"=>1,"msg"=>"请输入提问内容~"));
@@ -64,7 +64,7 @@ $file_ask = fopen("../question/".$new_id.".json", "w");
 fwrite($file_ask, json_encode($this_info));
 fclose($file_ask);
 
-//发送邮件提醒
+//发送邮件提醒到管理员
 //读取模版文件
 $site_url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
 $theme = file_get_contents("../theme/newask.html");
@@ -75,4 +75,5 @@ $theme = str_replace("{replyUrl}",$site_url."/",$theme);
 //发送邮件
 $sendmail = new sendemail;
 $sendmail->sendemail(__BASIC_EMAIL__, '匿名提问箱有新提问啦', $theme);
-echo json_encode(array("status"=>0));
+
+echo json_encode(array("status"=>0,"id"=>$new_id));

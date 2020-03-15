@@ -1,0 +1,15 @@
+.login-title{
+    text-align: center;
+    margin: 10px!important;
+}
+.login-input{
+    width:90%;
+    max-width:300px;
+    margin: 0 auto;
+}
+.login-btn{
+    margin:10px 0;
+}
+.main{
+    margin-top:25px;
+}

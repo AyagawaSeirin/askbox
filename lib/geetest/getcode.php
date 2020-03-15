@@ -9,8 +9,8 @@ $data = array(
     "client_type" => "web",
     "ip_address" => $_SERVER['REMOTE_ADDR'],
 );
-
 $status = $GtSdk->pre_process($data, 1);
 $_session['gtserver'] = $status;
 $_session['user_id'] = $data['user_id'];
+session_write_close();
 echo $GtSdk->get_response_str();
