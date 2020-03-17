@@ -11,5 +11,15 @@
     margin:10px 0;
 }
 .main{
-    margin-top:25px;
+    margin-top:15px;
+}
+.list-group{
+    /*margin:auto 0;*/
+    /*width: 100%;*/
+    text-align: center;
+    margin-top:10px;
+}
+.mdui-btn-group{
+    /*margin:0 auto;*/
+
 }

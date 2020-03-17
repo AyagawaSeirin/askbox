@@ -75,6 +75,8 @@ $choice = 1;
                             cancelText: "回去填写邮箱"
                         }
                     );
+                } else {
+                    captchaObj.verify();
                 }
             });
         };

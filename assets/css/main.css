@@ -7,6 +7,7 @@ body {
     max-width: 600px;
     margin: 10px auto;
     padding: 10px;
+    padding-bottom: 0;
 }
 
 p {
@@ -17,9 +18,26 @@ p {
     min-height:80px!important;
 }
 .card-ask-list{
-    padding:10px;
+    padding:15px;
     margin-bottom: 20px;
 }
 .card-ask-question{
 
+}
+.card-ask-time{
+    /*margin-top:5px;*/
+    font-size: 13.5px;
+}
+.loading{
+    margin:10px;
+}
+.a-ask{
+    text-decoration:none;
+}
+.card-title{
+    padding: 10px;
+}
+.card-content{
+    padding: 10px;
+    margin-top: 10px;
 }
