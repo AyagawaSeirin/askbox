@@ -13,10 +13,11 @@ if ($ask_all == null) {
     $ask_all = [];
 } else {
     $ask_all = json_decode($ask_all,true);
-    $new_id = end($ask_all)['id'] + 1;
+    $key = array_keys($ask_all);
+    $new_id = end($key) + 1;
 }
 $this_info = array(
-    "id" => $new_id,
+//    "id" => $new_id,
     "creat_time" => $time,
 //    "reply_time" => "",
     "reply" => 0,
@@ -43,6 +44,7 @@ fclose($file_ask_wait);
 $this_info['content'] = $content;
 $this_info['email'] = $email;
 $this_info['reply'] = "";
+$this_info['status'] = 0;
 $file_ask = fopen("../question/".$new_id.".json", "w");
 fwrite($file_ask, json_encode($this_info));
 fclose($file_ask);

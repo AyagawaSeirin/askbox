@@ -13,10 +13,10 @@ $choice = 1;
 <?php include(dirname(dirname(__FILE__)) . "/layout/admin/nav.php"); ?>
 <div class="list-group">
     <div class="mdui-btn-group" style="margin: 0 auto;">
-        <button type="button" id="btn-group-wait" onclick="loadlist('wait',0);" class="mdui-btn mdui-btn-active">待回答
+        <button type="button" id="btn-group-wait" onclick="loadlist('wait',1);" class="mdui-btn mdui-btn-active">待回答
         </button>
-        <button type="button" id="btn-group-reply" onclick="loadlist('reply',0);" class="mdui-btn">已回答</button>
-        <button type="button" id="btn-group-unreply" onclick="loadlist('unreply',0);" class="mdui-btn">已忽略</button>
+        <button type="button" id="btn-group-reply" onclick="loadlist('reply',1);" class="mdui-btn">已回答</button>
+        <button type="button" id="btn-group-unreply" onclick="loadlist('unreply',1);" class="mdui-btn">已忽略</button>
     </div>
 </div>
 <!--<div id="loading" class="mdui-spinner mdui-center loading"></div>-->
